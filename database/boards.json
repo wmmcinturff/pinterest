@@ -1,0 +1,23 @@
+{
+    "Board1": {
+      "name": "DIY",
+      "numberOfPins": 6,
+      "image": "images/badMaoMao/blueJay.jpg"
+    },
+    "Board2": {
+      "name": "SitFits",
+      "numberOfPins": 6
+    },
+    "Board3": {
+      "name": "Furniture",
+      "numberOfPins": 6
+    },
+    "Board4": {
+      "name": "Bad Mao-Maos",
+      "numberOfPins": 6
+    },
+    "Board5": {
+      "name": "Dumb Humans",
+      "numberOfPins": 6
+    }
+  }
