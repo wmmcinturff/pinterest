@@ -1,57 +1,28 @@
-import axios from 'axios';
-import apiKeys from '../../helpers/apiKeys.json';
+import pinData from '../../helpers/data/pinData';
 
-const baseUrl = apiKeys.firebaseKeys.databaseURL;
+const pinMaker = (pinObject) => {
+  const domString = `<div class="card m-2" style="width: 18rem;" id="${pinObject.firebaseKey}">
+      <div class="card-body">
+      <h5 class="card-title">${pinObject.name}</h5>
+      <p class="card-text"> image: ${pinObject.image}<br /></p>
+      </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">${pinObject.boardName}</li>
+        </ul>
+        <div class="card-body">
+        <a href="#" id="${pinObject.firebaseKey}" class="btn btn-info update-pin><i class="far fa-edit"></i> Update Pin</a>
+        <a href="#" id="${pinObject.firebaseKey}" class="btn btn-danger delete-pin">Delete Pin</a>
+      </div>
+      </div>`;
 
-const getAllCows = () => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/pins.json`).then((response) => {
-    const demCows = response.data;
-    const cows = [];
-    if (demCows) {
-      Object.keys(demCows).forEach((cowId) => {
-        cows.push(demCows[cowId]);
-      });
-    }
-    resolve(cows);
-  }).catch((error) => reject(error));
-});
+  $('body').on('click', '.delete-pin', (e) => {
+    e.stopImmediatePropagation();
+    const firebaseKey = e.currentTarget.id;
+    $(`.card#${firebaseKey}`).remove();
+    pinData.deletePin(firebaseKey);
+  });
 
-const deleteCow = (firebaseKey) => axios.delete(`${baseUrl}/cows/${firebaseKey}.json`);
-
-const addCow = (data) => axios.post(`${baseUrl}/cows.json`, data)
-  .then((response) => {
-    const update = { firebaseKey: response.data.name };
-    axios.patch(`${baseUrl}/cows/${response.data.name}.json`, update);
-  }).catch((error) => console.warn(error));
-
-const getFarmerCows = (farmerUid) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/cows.json?orderBy="farmerUid"&equalTo="${farmerUid}"`)
-    .then((response) => {
-      const farmerCows = response.data;
-      const cows = [];
-      if (farmerCows) {
-        Object.keys(farmerCows).forEach((cowId) => {
-          cows.push(farmerCows[cowId]);
-        });
-      }
-      resolve(cows);
-    }).catch((error) => reject(error));
-});
-
-const getSingleCow = (cowFirebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/cows/${cowFirebaseKey}.json`).then((response) => {
-    const thisCow = response.data;
-    resolve(thisCow);
-  }).catch((error) => reject(error));
-});
-
-const updateCow = (firebaseKey, cowObject) => axios.patch(`${baseUrl}/cows/${firebaseKey}.json`, cowObject);
-
-export default {
-  getAllCows,
-  deleteCow,
-  addCow,
-  getFarmerCows,
-  getSingleCow,
-  updateCow
+  return domString;
 };
+
+export default { pinMaker };

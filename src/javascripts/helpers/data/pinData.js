@@ -5,11 +5,11 @@ const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const getAllPins = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/pins.json`).then((response) => {
-    const thosePins = response.data;
+    const pinResponse = response.data;
     const pins = [];
-    if (thosePins) {
-      Object.keys(thosePins).forEach((pinId) => {
-        pins.push(thosePins[pinId]);
+    if (pinResponse) {
+      Object.keys(pinResponse).forEach((pinId) => {
+        pins.push(pinResponse[pinId]);
       });
     }
     resolve(pins);

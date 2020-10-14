@@ -3,7 +3,6 @@ import 'firebase/auth';
 
 const signMeIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-
   firebase.auth().signInWithPopup(provider);
 };
 
@@ -19,4 +18,14 @@ const loginButton = () => {
   $('#app').html(domString);
   $('#google-auth').on('click', signMeIn);
 };
-export default { loginButton };
+
+const logoutButton = () => {
+  $('#navbar-logout-button').on('click', (e) => {
+    e.preventDefault();
+    window.sessionStorage.removeItem('ua');
+    firebase.auth().signOut();
+    window.location.href = '/';
+  });
+};
+
+export default { loginButton, logoutButton };
