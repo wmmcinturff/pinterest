@@ -15,11 +15,12 @@ const loginButton = () => {
     </button>
   </div>`;
 
-  $('#app').html(domString);
+  $('#btn-login').html(domString);
   $('#google-auth').on('click', signMeIn);
 };
 
 const logoutButton = () => {
+  $('#btn-logout').html('<button class="nav-link btn btn-danger p-2" id="navbar-logout-button">Logout</button>');
   $('#navbar-logout-button').on('click', (e) => {
     e.preventDefault();
     window.sessionStorage.removeItem('ua');
