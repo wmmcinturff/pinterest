@@ -1,11 +1,12 @@
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
+import 'firebase/auth';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getAllBoards = (userId) => new Promise((resolve, reject) => {
+const getAllBoards = () => new Promise((resolve, reject) => {
   axios
-    .get(`${baseUrl}/boards.json?orderBy="useruid"&equalTo="${userId}"`)
+    .get(`${baseUrl}/boards.json`)
     .then((response) => {
       const boardResponse = response.data;
       const boardObject = [];

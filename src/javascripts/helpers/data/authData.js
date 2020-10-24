@@ -5,6 +5,7 @@ import navBar from '../../components/navBar/navBar';
 import userData from './userData';
 import view from '../viewHelper';
 
+// GOT LOGIN/LOGOUT EVENTS RENDERING AS DESIRED //
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((userObj) => {
     if (userObj) {

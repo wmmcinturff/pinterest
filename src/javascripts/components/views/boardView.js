@@ -1,9 +1,9 @@
 import boardData from '../../helpers/data/boardData';
 import board from '../cards/boardCard';
 
-const viewAllBoards = (user) => {
+const viewAllBoards = () => {
   $('#app').html('');
-  boardData.getAllBoards(user).then((response) => {
+  boardData.getAllBoards().then((response) => {
     if (response.length) {
       response.forEach((boardObj) => {
         $('#app').append(board.boardMaker(boardObj));
