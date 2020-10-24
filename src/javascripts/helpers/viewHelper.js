@@ -1,11 +1,7 @@
 import boardView from '../components/views/boardView';
-import homePage from '../components/views/homePage';
 
 const viewHelper = (id, user) => {
   switch (id) {
-    case '#':
-    case 'home':
-      return homePage.viewHomepage();
     case 'boards-link':
       return boardView.viewAllBoards(user);
     default:
@@ -13,10 +9,10 @@ const viewHelper = (id, user) => {
   }
 };
 
-const viewListener = (view) => {
-  viewHelper(view);
+const viewListener = (view, user) => {
+  viewHelper(view, user);
   $('body').on('click', 'li.nav-item', (e) => {
-    viewHelper(e.currentTarget.id);
+    viewHelper(e.currentTarget.id, user);
   });
 };
 

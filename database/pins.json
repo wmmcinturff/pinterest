@@ -1,54 +1,54 @@
 {
     "pin1": {
-        "boardUid": "asdfghjk890",
+        "boardUid": "board2",
         "name": "Amazon Box",
         "image": "https://www.whycatwhy.com/wp-content/uploads/2016/08/cat-trap-box-e1471305692705-1024x507.jpg",
         "uid": "pin1"
     },
     "pin2": {
-        "boardUid": "asdfghjk890",
+        "boardUid": "board2",
         "name": "Cats Are Liquid",
         "image": "https://www.barnorama.com/wp-content/uploads/2018/03/07-cats_will_sit_anywhere_they_can_fit_in.jpg",
         "uid": "pin2"
     },
     "pin3": {
-        "boardUid": "asdfghjk890",
+        "boardUid": "board2",
         "name": "Wine-y Kitteh",
         "image": "https://assets.change.org/photos/6/ug/ac/mkUGacMsSDaQCPM-800x450-noPad.jpg?1550658632",
         "uid": "pin3"
     },
     "pin4": {
-        "boardUid": "qwertyuio764",
+        "boardUid": "board1",
         "name": "How To Upholstery",
         "image": "https://cdn.shopify.com/s/files/1/0344/6469/files/scratch_couch.jpg?v=1544044111",
         "uid": "pin4"
     },
     "pin5": {
-        "boardUid": "qwertyuio764",
+        "boardUid": "board1",
         "name": "Window Treatments",
         "image": "https://www.rightthisminute.com/sites/default/files/videos/images/destroyed-house-video.jpg",
         "uid": "pin5"
     },
     "pin6": {
-        "boardUid": "qwertyuio764",
+        "boardUid": "board1",
         "name": "Gardening",
         "image": "https://lh3.googleusercontent.com/proxy/GqWRQIiQk5NatrMWUMRhwh9xzW1Rf3ofkEAZDT5RQdNqA2iPnLMkT2XHS7tYJ2Mb04MeVO09HINmFj-jL1ck7shrhEQTEqyLqWs",
         "firebaseKey": "pin6"
     },
     "pin7": {
-        "boardUid": "zxcvbnm1234",
+        "boardUid": "board3",
         "name": "Meow-century modern",
         "image": "https://i.etsystatic.com/15790359/r/il/1cf903/2034259695/il_794xN.2034259695_93lo.jpg",
         "uid": "pin7"
     },
     "pin8": {
-        "boardUid": "zxcvbnm1234",
+        "boardUid": "board3",
         "name": "Fit for a queen",
         "image": "https://image.made-in-china.com/202f0j00ePmYWGFdfzkI/Renel-Pet-Furniture-Climber-Bed-Cat-Tree-House-for-Cats-Climbing-Playing-Toy.jpg",
         "uid": "pin8"
     },
     "pin9": {
-        "boardUid": "zxcvbnm1234",
+        "boardUid": "board3",
         "name": "Space kitteh pod",
         "image": "https://secure.img1-fg.wfcdn.com/im/31337895/resize-h800-w800%5Ecompr-r85/1012/101262958/Jeanette+Wall+Mounted+Furniture+Function.jpg",
         "uid": "pin9"

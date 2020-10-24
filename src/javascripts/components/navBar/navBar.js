@@ -1,4 +1,18 @@
-const pinNavbar = (name = 'Guest') => {
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+// ADDED LOGOUT EVENT BACK //
+const logoutButton = () => {
+  $('#btn-logout').html('<button class="nav-link btn btn-danger p-2" id="navbar-logout-button">Logout</button>');
+  $('#navbar-logout-button').on('click', (e) => {
+    e.preventDefault();
+    window.sessionStorage.removeItem('ua');
+    firebase.auth().signOut();
+    window.location.href = '/';
+  });
+};
+
+const pinNavbar = (name) => {
   $('#nav').html(
     `<nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#"><i class="fab fa-pinterest"></i>Pinterest</a>
@@ -10,13 +24,13 @@ const pinNavbar = (name = 'Guest') => {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
        <ul class="navbar-nav mr-auto">
         <li class="nav-item mx-3"  id="boards-link">
-         <a class="nav-link" href="#"><i class="fas fa-paw"></i> Boards</a>
+         <a class="nav-link" href="#"><i class="fas fa-clipboard-list"></i> Boards</a>
         </li>
         <li class="nav-item mx-3" id="pins-link">
-         <a class="nav-link" href="#"><i class="fas fa-thumbtack"></i>Pins</a>
+         <a class="nav-link" href="#"><i class="fas fa-thumbtack"></i>Add a Pin</a>
         </li>
         <li class="nav-item mx-3" id="add-pin-link">
-         <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i> Add A Pin</a>
+         <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i> Add A Board</a>
         </li>
        </ul>
 
@@ -24,12 +38,14 @@ const pinNavbar = (name = 'Guest') => {
         <li id='nav-username' class="user-info-nav">${name}</li>
         <li id='btn-login' class="nav-item">
         </li>
-        <li id='btn-logout' class="nav-item">
+        <li class="nav-item active">
+          <button class="nav-link btn btn-outline-danger" id="navbar-logout-button">Logout</button>
         </li>
       </ul>
      </div>
     </nav>`
   );
+  logoutButton();
 };
 
 export default { pinNavbar };

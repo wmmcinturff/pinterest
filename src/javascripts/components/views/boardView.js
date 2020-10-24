@@ -1,33 +1,15 @@
 import boardData from '../../helpers/data/boardData';
-import boardCard from '../cards/boardCard';
+import board from '../cards/boardCard';
 
 const viewAllBoards = (user) => {
   $('#app').html('');
-  $('#app').append('<div id="board-btn-area" class="button-area"></div>');
-  $('#app').append('<div id="board-area"></div>');
-
-  boardData.getAllBoards().then((response) => {
+  boardData.getAllBoards(user).then((response) => {
     if (response.length) {
-      $('#board-area').html('');
       response.forEach((boardObj) => {
-        $('#board-area').append(boardCard.boardMaker(boardObj));
-        if (user) {
-          if ($('#board-btn-area').is(':empty')) {
-            $('#board-btn-area').append(
-              '<button type="button" class="btn btn-success" id="add-board-btn"><i class="fas fa-plus-circle"></i>Add a New Board</button>'
-            );
-          }
-
-          $(`#${boardObj.boardUid}`).append(
-            `<a href="#" class="card-link update-link" id=${boardObj.boardUid}>Update Board</a>`
-          );
-          $(`#${boardObj.boardUid}`).append(
-            `<a href="#" class="card-link remove-link" id=${boardObj.boardUid}>Remove Board</a>`
-          );
-        }
+        $('#app').append(board.boardMaker(boardObj));
       });
     } else {
-      $('#board-area').append('<h1>No Boards!</h1>');
+      $('#app').append('<h1>No Boards!</h1>');
     }
   });
 };
