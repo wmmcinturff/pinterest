@@ -1,6 +1,7 @@
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
 import 'firebase/auth';
+// import firebase from 'firebase/app';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
@@ -21,5 +22,5 @@ const getAllBoards = () => new Promise((resolve, reject) => {
 });
 
 export default {
-  getAllBoards
+  getAllBoards,
 };
