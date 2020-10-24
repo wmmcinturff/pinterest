@@ -1,4 +1,4 @@
-const pinNavbar = (name = 'Procrastinator') => {
+const pinNavbar = (name = 'Guest') => {
   $('#nav').html(
     `<nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#"><i class="fab fa-pinterest"></i>Pinterest</a>

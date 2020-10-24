@@ -1,9 +1,13 @@
-import board from '../components/views/boardView';
+import boardView from '../components/views/boardView';
+import homePage from '../components/views/homePage';
 
 const viewHelper = (id, user) => {
   switch (id) {
+    case '#':
+    case 'home':
+      return homePage.viewHomepage();
     case 'boards-link':
-      return board.viewAllBoards(user);
+      return boardView.viewAllBoards(user);
     default:
       return console.warn('nothing clicked');
   }

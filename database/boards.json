@@ -3,21 +3,20 @@
       "name": "DIY",
       "image": "https://1.bp.blogspot.com/-7KCVhlLiAq4/TxVc2Mw5K0I/AAAAAAAADSM/ssg8HgUPhQ8/s1600/funny-cats-dogs-destroy-house-018.jpg",
       "description": "A tastefully curated selection of mischief",
-      "boardUid": "qwertyuio764",
-      "firebaseKey": "board1"
+      "boardUid": "board1"
     },
     "board2": {
       "name": "FitSits",
       "image": "https://imgix.bustle.com/2017/4/19/436f22a4-f8e8-4f6d-90a0-2bb374002521.jpg?w=1200&h=630&q=70&fit=crop&crop=faces&fm=jpg",
       "description": "If I fits, I sits",
-      "boardUid": "asdfghjk890",
-      "firebaseKey": "board2"
+      "boardUid": "board2"
+  
     },
     "board3": {
       "name": "Furniture",
       "image":"https://secure.img1-fg.wfcdn.com/im/76576693/resize-h800-w800%5Ecompr-r85/5722/57228374/49%2522+Dexter+Contemporary+Cat+Tree.jpg",
       "description": "Things The Human Needs to Get Me",
-      "boardUid": "zxcvbnm1234",
-      "firebaseKey": "board3"
+      "boardUid": "board3"
+     
     }  
   }

@@ -3,9 +3,11 @@ import 'firebase/auth';
 import auth from '../../components/auth/auth';
 import navBar from '../../components/navBar/navBar';
 import userData from './userData';
+import view from '../viewHelper';
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((userObj) => {
+    view.viewListener('#', userObj);
     if (userObj) {
       const currentUser = userData.setCurrentUser(userObj);
       const { name } = currentUser;

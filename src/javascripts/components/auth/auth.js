@@ -9,13 +9,13 @@ const signMeIn = () => {
 const loginButton = () => {
   const domString = `<div id="auth">
     <span style="font-size: 5em; color: Tomato;"><i class="fab fa-pinterest"></i></span>
-    <h4>Welcome to Pinterest!</h4>
+    <h1>Pinterest</h1>
     <button id="google-auth" class="btn btn-primary btn-lg">
       <i class="fab fa-google"></i></i>Google Login
     </button>
   </div>`;
 
-  $('#btn-login').html(domString);
+  $('#app').html(domString);
   $('#google-auth').on('click', signMeIn);
 };
 

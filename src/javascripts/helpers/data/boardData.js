@@ -20,7 +20,7 @@ const getAllBoards = () => new Promise((resolve, reject) => {
 });
 
 const addBoard = (data) => axios
-  .post(`${baseUrl}/planes.json`, data)
+  .post(`${baseUrl}/boards.json`, data)
   .then((response) => {
     const update = { uid: response.data.name };
     axios.patch(`${baseUrl}/boards/${response.data.name}.json`, update);

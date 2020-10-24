@@ -18,8 +18,11 @@ const viewAllBoards = (user) => {
             );
           }
 
-          $(`#${boardObj.uid}`).append(
-            `<a href="#" class="card-link update-link" id=${boardObj.uid}>Update Plane</a>`
+          $(`#${boardObj.boardUid}`).append(
+            `<a href="#" class="card-link update-link" id=${boardObj.boardUid}>Update Board</a>`
+          );
+          $(`#${boardObj.boardUid}`).append(
+            `<a href="#" class="card-link remove-link" id=${boardObj.boardUid}>Remove Board</a>`
           );
         }
       });
