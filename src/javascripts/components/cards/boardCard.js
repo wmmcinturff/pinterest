@@ -1,4 +1,4 @@
-// import boardData from '../../helpers/data/boardData';
+import boardData from '../../helpers/data/boardData';
 
 const boardMaker = (boardObject) => {
   const domString = `<div class="card boardCards" style="width: 18rem;" id="${boardObject.boardUid}">
@@ -10,8 +10,13 @@ const boardMaker = (boardObject) => {
       <a href="#" id="${boardObject.boardUid}" class="btn btn-primary delete-board"><i class="fas fa-minus-circle"></i>Delete Board</a>
     </div>
   </div>`;
+
+  $('body').on('click', '.delete-board', (e) => {
+    e.stopImmediatePropagation();
+    const boardUid = e.currentTarget.id;
+    $(`.card#${boardUid}`).remove();
+    boardData.deleteBoard(boardUid);
+  });
   return domString;
 };
-// NEED TO DELETE BOARD LATER //
-
 export default { boardMaker };

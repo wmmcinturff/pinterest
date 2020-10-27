@@ -20,8 +20,8 @@ const viewListener = (view) => {
   });
 
   $('body').on('click', '.card.cardBoard .see-board-pins', (e) => {
-    const boardId = e.currentTarget.id;
-    viewHelper('pins-link', boardId);
+    const boardUid = e.currentTarget.id;
+    viewHelper('pins-link', boardUid);
   });
 };
 
