@@ -1,7 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-// ADDED LOGOUT EVENT BACK //
 const logoutButton = () => {
   $('#btn-logout').html('<button class="nav-link btn btn-danger p-2" id="navbar-logout-button">Logout</button>');
   $('#navbar-logout-button').on('click', (e) => {
@@ -26,10 +25,7 @@ const pinNavbar = (name) => {
         <li class="nav-item mx-3"  id="boards-link">
          <a class="nav-link" href="#"><i class="fas fa-clipboard-list"></i> Boards</a>
         </li>
-        <li class="nav-item mx-3" id="pins-link">
-         <a class="nav-link" href="#"><i class="fas fa-thumbtack"></i>Add a Pin</a>
-        </li>
-        <li class="nav-item mx-3" id="add-pin-link">
+        <li class="nav-item mx-3" id="add-board-link">
          <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i> Add A Board</a>
         </li>
        </ul>

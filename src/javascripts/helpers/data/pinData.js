@@ -17,14 +17,21 @@ const getBoardPins = (boardUid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const getSinglePin = (pinUid) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/pins/${pinUid}.json`).then((response) => {
-    const datPin = response.data;
-    resolve(datPin);
-  }).catch((error) => reject(error));
+const getAllPins = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/pins.json`)
+    .then((response) => {
+      const thePins = response.data;
+      const pinsThings = [];
+      if (thePins) {
+        Object.keys(thePins).forEach((pinId) => {
+          pinsThings.push(thePins[pinId]);
+        });
+      }
+      resolve(pinsThings);
+    })
+    .catch((error) => reject(error));
 });
-
 export default {
   getBoardPins,
-  getSinglePin,
+  getAllPins
 };

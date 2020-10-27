@@ -1,18 +1,27 @@
 import boardView from '../components/views/boardView';
+import pinsViews from '../components/views/pinsViews';
 
-const viewHelper = (id, user) => {
+const viewHelper = (id, param) => {
+  $('#app').html('');
   switch (id) {
     case 'boards-link':
-      return boardView.viewAllBoards(user);
+      return boardView.viewBoards();
+    case 'pins-link':
+      return pinsViews.viewPins(param);
     default:
       return console.warn('nothing clicked');
   }
 };
 
-const viewListener = (view, user) => {
-  viewHelper(view, user);
+const viewListener = (view) => {
+  viewHelper(view);
   $('body').on('click', 'li.nav-item', (e) => {
-    viewHelper(e.currentTarget.id, user);
+    viewHelper(e.currentTarget.id);
+  });
+
+  $('body').on('click', '.card.cardBoard .see-board-pins', (e) => {
+    const boardId = e.currentTarget.id;
+    viewHelper('pins-link', boardId);
   });
 };
 
