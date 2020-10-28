@@ -3,8 +3,8 @@ import apiKeys from '../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getBoardPins = (boardUid) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/pins.json?orderBy="boardUid"&equalTo="${boardUid}"`)
+const getBoardPins = (pinThang) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/pins.json?orderBy="boardUid"&equalTo="${pinThang}"`)
     .then((response) => {
       const boardPins = response.data;
       const pins = [];
@@ -31,7 +31,19 @@ const getAllPins = () => new Promise((resolve, reject) => {
     })
     .catch((error) => reject(error));
 });
+
+const getSinglePin = (pinUid) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/pins/${pinUid}.json`).then((response) => {
+    const thisPin = response.data;
+    resolve(thisPin);
+  }).catch((error) => reject(error));
+});
+
+const deletePin = (pinUid) => axios.delete(`${baseUrl}/pin/${pinUid}.json`);
+
 export default {
   getBoardPins,
-  getAllPins
+  getAllPins,
+  getSinglePin,
+  deletePin
 };

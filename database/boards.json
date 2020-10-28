@@ -3,26 +3,26 @@
       "name": "DIY",
       "image": "https://1.bp.blogspot.com/-7KCVhlLiAq4/TxVc2Mw5K0I/AAAAAAAADSM/ssg8HgUPhQ8/s1600/funny-cats-dogs-destroy-house-018.jpg",
       "description": "A tastefully curated selection of mischief",
-      "firebaseKey": "asd84232",
-      "boardUid": "board1",
-      "userUid": "ZaYObzw66Uf2c7yKfbHpgrKe5iG2"
+      "firebaseKey": "board1",
+      "userUid": "ZaYObzw66Uf2c7yKfbHpgrKe5iG2",
+      "boardUid": "Board1"
     },
     "board2": {
       "name": "FitSits",
       "image": "https://imgix.bustle.com/2017/4/19/436f22a4-f8e8-4f6d-90a0-2bb374002521.jpg?w=1200&h=630&q=70&fit=crop&crop=faces&fm=jpg",
       "description": "If I fits, I sits",
-      "firebaseKey": "jkl78999",
-      "boardUid": "board2",
-      "userUid": "ZaYObzw66Uf2c7yKfbHpgrKe5iG2"
+      "firebaseKey": "board2",
+      "userUid": "ZaYObzw66Uf2c7yKfbHpgrKe5iG2",
+      "boardUid": "Board2"
   
     },
     "board3": {
       "name": "Furniture",
       "image":"https://secure.img1-fg.wfcdn.com/im/76576693/resize-h800-w800%5Ecompr-r85/5722/57228374/49%2522+Dexter+Contemporary+Cat+Tree.jpg",
       "description": "Things The Human Needs to Get Me",
-      "firebaseKey": "zxc4567",
-      "boardUid": "board3",
-      "userUid": "ZaYObzw66Uf2c7yKfbHpgrKe5iG2"
+      "firebaseKey": "board3",
+      "userUid": "ZaYObzw66Uf2c7yKfbHpgrKe5iG2",
+      "boardUid": "Board3"
      
     }  
   }

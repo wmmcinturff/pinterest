@@ -2,6 +2,7 @@ import 'firebase/auth';
 import firebase from 'firebase/app';
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
+import pinData from './pinData';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
@@ -33,23 +34,37 @@ const getUsersBoards = () => new Promise((resolve, reject) => {
           boards.push(userBoards[boardId]);
         });
       }
-
       resolve(boards);
     })
     .catch((error) => reject(error));
 });
-const getSingleBoard = (boardUid) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/boards.json?orderBy="boardUid"&equalTo="${boardUid}"`)
+const getSingleBoard = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/boards.json?orderBy="useruid"&equalTo="${firebaseKey}"`)
     .then((response) => {
-      const board = Object.values(response.data);
-      const thisboard = board[0];
-      resolve(thisboard);
+      const thisBoard = Object.values(response.data);
+      resolve(thisBoard);
     })
     .catch((error) => reject(error));
 });
 
+const deleteBoard = (boardId) => {
+  pinData.getBoardPins(boardId)
+    .then((response) => {
+      response.forEach((item) => {
+        pinData.deletePin(item.firebaseKey);
+      });
+    })
+    .then(() => {
+      getSingleBoard(boardId)
+        .then((response) => {
+          axios.delete(`${baseUrl}/boards/${response.firebaseKey}.json`);
+        });
+    });
+};
+
 export default {
   getAllBoards,
   getSingleBoard,
-  getUsersBoards
+  getUsersBoards,
+  deleteBoard
 };

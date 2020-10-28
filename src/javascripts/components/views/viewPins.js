@@ -1,12 +1,12 @@
 import card from '../cards/pinCards';
 import pinsView from '../../helpers/data/mergeData';
 
-const viewPins = (boardId) => {
-  $('#auth').html('');
-  pinsView.getSingleBoardView(boardId)
+const viewPins = (boardUid) => {
+  $('#app').html('');
+  pinsView.getSingleBoardView(boardUid)
     .then((response) => {
       const { board, pins } = response;
-      $('#auth').html(`<div id="single-view">
+      $('#app').html(`<div id="single-view">
                      <h1>${board.name} Pins</h1>
                      </div>`);
       if (pins.length) {
